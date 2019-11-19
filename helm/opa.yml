@@ -1,0 +1,236 @@
+---
+# Source: opa/templates/webhookconfiguration.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: opa-cert
+  labels:
+    app: opa
+    chart: "opa-1.12.0"
+    release: "opa"
+    heritage: "Helm"
+type: Opaque
+data:
+
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMrakNDQWVLZ0F3SUJBZ0lRTm5NZHpnWVoyRjllZWMyRllWRk1JVEFOQmdrcWhraUc5dzBCQVFzRkFEQWIKTVJrd0Z3WURWUVFERXhCdmNHRXRZV1J0YVhOemFXOXVMV05oTUI0WERURTVNVEV4T1RJeE5UVTFNMW9YRFRJNQpNVEV4TmpJeE5UVTFNMW93RmpFVU1CSUdBMVVFQXhNTGIzQmhMbTl3WVM1emRtTXdnZ0VpTUEwR0NTcUdTSWIzCkRRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQkFRREd3Z3Rud3U3ZUtDKzYwNVgxS0xpczhMeHRJQzZLL1M1ajhqWXgKbVRxUmsyV2hzVG8vUjFpRURLMmg3NUdJOFFWSHlzK3pDL29Rd3p3TkpkNU9reEpsZjVRWTFhOVk2YW5BdGtqVApNQWpSeS85clJzSmR4cC9yd1dicjUvNEY5cXo4ZG15UjM5clVtUGJCVzFSNHRTMndIdjVkYWNjdzdaYWJWdkVFCm9BNThLdmN1M3BmTllJSWUwK2VRWG1XRG5PcDhYTzdpbXBYcjFDcVYvVU5sVE0xOFBYRy93UEsweW10ZGpueFIKbXc4am9Zd1l3V1FjMEtaTyswNE1oMXZuT0FHMXoxL3hGTEx0RWhkVDVpV1hKVmxraXNuWTA4UmtoSWViWkhXTgowY1FwNDFQQXhod3NhQWNSYUhSUVpuc2JFMkM3NlJGdGhZWWFVRDdVL0RTb29JSTFBZ01CQUFHalB6QTlNQTRHCkExVWREd0VCL3dRRUF3SUZvREFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0RBWUQKVlIwVEFRSC9CQUl3QURBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQUZmcEVyeVh1em1OcU1VOXBuZDFHd09JdwowZmNueVlTK1h6TGkwMWo1ZTVnSGdTakpJWVNXMFFEQ0FpU2JXaVVEaFFBNW5CcmNqU3ZzQVgrNkJpdFIyYU5ECkRCT0hhREpHb0l3bTVoSTdoRmNmMVBJTTdiMHdDZXd6cFVtellkeTJXUXZ3S0ZIWjMvdHNEOE0xaDVPbmtqZHIKaFVaKytRS2N4WmtPa1MrSVdpUVJyTERjblNXbkVFOWYxV1hlTVlPdFZFakFCZFkzclM1RmFHdlUwR0c4TG5GNApmRlFDUVpnaVNkSVpCRk9JNmgvcy9jS1hjMXNqc2xYcnU4bmJkYjBiQS8rRVJLRHdhS1EzN09VekVPMTUxemJ3CjJGL2tBaTlrOFRZdUo0NGJTL0tQZWNGcjJBUXZWMVRYVWlvYjFabFF0dTk0UjRMNGM3TFYvWERNY1FwZlRnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBeHNJTFo4THUzaWd2dXRPVjlTaTRyUEM4YlNBdWl2MHVZL0kyTVprNmtaTmxvYkU2ClAwZFloQXl0b2UrUmlQRUZSOHJQc3d2NkVNTThEU1hlVHBNU1pYK1VHTld2V09tcHdMWkkwekFJMGN2L2EwYkMKWGNhZjY4Rm02K2YrQmZhcy9IWnNrZC9hMUpqMndWdFVlTFV0c0I3K1hXbkhNTzJXbTFieEJLQU9mQ3IzTHQ2WAp6V0NDSHRQbmtGNWxnNXpxZkZ6dTRwcVY2OVFxbGYxRFpVek5mRDF4djhEeXRNcHJYWTU4VVpzUEk2R01HTUZrCkhOQ21UdnRPRElkYjV6Z0J0YzlmOFJTeTdSSVhVK1lsbHlWWlpJckoyTlBFWklTSG0yUjFqZEhFS2VOVHdNWWMKTEdnSEVXaDBVR1o3R3hOZ3Ura1JiWVdHR2xBKzFQdzBxS0NDTlFJREFRQUJBb0lCQUhjNGgvemFlY3U2VVQ4QQprYyszZUdjTUZBcGxKbVhxamp3WFdwaVBzQWtJWUFzSU1zY29OWmtudmJNSDc4VXp4WllWdWxaTTFkZmVOQlF5CjVkRTkrT2YzQ2MrSHhhRlFyNmxQN2dqM3BDS3IrZTdRUitCV056RUVGb2RrNWdPUHZwM0ZMMFNsQVM5Sy9hQm4KOXhoY25TWXF3U3NwT3ZsSFduS2RTUDhjUHZRTkJ3b2JzdUFqNzBvVVdJQ3lXaEp3aTA0RmQrSUpwL3IyeFRUZAp2dWRaS3RmME1vamFNMVEyVlRmZFpwWFBRbHBraDIrOFdCOFZ4RXJWY0JZRjVCS3k3VGJzampseVlrUmcrWHhRCk9HVlRkeDNYSFExbmE1S0hqdk5IOGp2WmdBK0xiVnFhcjl3NUh4bWpSZjZ3R1F6OHNhem1kcEZic3VDQVpiQ1EKMS8wRTdEVUNnWUVBM2sxckR4UzRRLzRwb3cwbkQxUkI3K0w1Z2x3Y1hIQXVpVFI1YTJOdEFuWExQZXNIeGN0YwoyR05wNmNYN2hEcGkyMTFGNTRMOWFEcjM1L0tLZmIrdWVhL3pXdTlSaktucHVtZ01ldTMvWnlQTVgrbjhVM2kyClorWWQxcHJaenU0NkFMUkNsNjBaT0hlNnk1SFRPdWUzVDJkd3VsS1pCL2xuS2VJdWR3WUVzQmNDZ1lFQTVPTDQKYUpXMUphS2VMVi9oenFzRWZHTzhidFBPL3JHT2J0Uk1ndWZZTmk2amt4YzIzMGkzWVZwamhDT2NuOFdaRit3cAppNFI0OUkxRmpNemo2MFhLOUFQazd3cVRhUngvOVlhUmdDcE9GMGtmbTlIQlVCbWZ2QXBVL3hWR3hOSSs1elVFCjZWRy9zWVM5UWhtT1gvZHBCY2xaZ2pLSFdCYnptckJ0bXI1dDQ1TUNnWUFQMWxvak4rbXN4bVcyL1Eva1VxOWoKNUxxNzQ4NE5jOXlNMzlVcXBtbTB2Q21mbnFmdUduL2gxcXRNQVZQYTVzSDJPTjNyRVhUMlFRVTZYQmdydjBVeAozQ3d0TlZHTkFPbnE0dERJelQzZDNqb0lOMFpIdUJqZXJCRkNJY1FVcnZvbzVLNjkyWklyYUxSQkhvRjY5OWtpCmFnOG81d3VKK3VXem9TNklRa0NCUHdLQmdIRDN2UmNSWExqWWpDMWs5M1FqWURGc29HSXExQzFNd1RuZU9tMFoKdE5MNUxlNjVOSEg3MTlhSzREY2x4SFh1OXVLaHd0ZURhSmQ2Nm1yVjdWLy9zRzNEUmtqYzlXaVprbVpDSnFvVgpOem15ODVEYWRBanV2TEg0ZjM3dXAyRVpTOGFkbW5EMTBpRHhuTjkwOFpwWDZGUGN6dnE5cWFOR29MRW1odElyClR0MVZBb0dBSWVROTVEbVFLaFRBd3g5eHhEMEJ6YWliQ1hJbHM5S0ZuNHZkcW9IcU1ocnVWOEkyRDZOM1kvR1MKY3NlemF5SFFhZlR5UEdvWndMYUNYL0N1QW9NVWt6azg0WDhIeGl3cCtMQVlqcGx4QnpMZ2IweVRqenUwSkRESApwaHJqOEc1ejJvL2Z4TzgycWZLUU5uVkZOa2xxNHhtTkg5NEtvY3BrRmxld0dZQkVnMHM9Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+---
+# Source: opa/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: opa
+  labels:
+    app: opa
+    chart: opa-1.12.0
+    release: "opa"
+    heritage: "Helm"
+---
+# Source: opa/templates/mgmt-clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app: opa
+    chart: opa-1.12.0
+    heritage: Helm
+    release: opa
+    component: mgmt
+  name: opa-mgmt
+rules:
+  []
+---
+# Source: opa/templates/mgmt-clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app: opa
+    chart: opa-1.12.0
+    heritage: Helm
+    release: opa
+    component: mgmt
+  name: opa-mgmt
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: opa-mgmt
+subjects:
+  - kind: ServiceAccount
+    name: opa
+    namespace: opa
+---
+# Source: opa/templates/service.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: opa
+  labels:
+    app: opa
+    chart: "opa-1.12.0"
+    release: "opa"
+    heritage: "Helm"
+spec:
+  selector:
+    app: opa
+  ports:
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 443
+---
+# Source: opa/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opa
+  labels:
+    app: opa
+    chart: "opa-1.12.0"
+    release: "opa"
+    heritage: "Helm"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opa
+  template:
+    metadata:
+      annotations:
+        checksum/certs: 3d4531e1b749b702a7e1e533aef5b0c736551671fba53ee681882320dcaa158e
+      labels:
+        app: opa
+      name: opa
+    spec:
+      initContainers:
+        - name: initpolicy
+          image: openpolicyagent/kube-mgmt:0.9
+          imagePullPolicy: IfNotPresent
+          resources:
+            {}
+          command:
+          - /bin/sh
+          - -c
+          - |
+            tr -dc 'A-F0-9' < /dev/urandom | dd bs=1 count=32 2>/dev/null > /bootstrap/mgmt-token
+            TOKEN=`cat /bootstrap/mgmt-token`
+            cat > /bootstrap/authz.rego <<EOF
+            package system.authz
+            default allow = false
+            # Allow anonymous access to the default policy decision.
+            allow { input.path = [""]; input.method = "POST" }
+            allow { input.path = [""]; input.method = "GET" }
+            # This is only used for health check in liveness and readiness probe
+            allow { input.path = ["health"]; input.method = "GET" }
+            allow { input.identity == "$TOKEN" }
+            EOF
+          volumeMounts:
+            - name: bootstrap
+              mountPath: /bootstrap
+
+      containers:
+        - name: opa
+          image: openpolicyagent/opa:0.14.1
+          imagePullPolicy: IfNotPresent
+          resources:
+            {}
+          args:
+            - "run"
+            - "--server"
+            - "--tls-cert-file=/certs/tls.crt"
+            - "--tls-private-key-file=/certs/tls.key"
+            - "--addr=0.0.0.0:443"
+            - "--log-level=info"
+            - "--log-format=text"
+            - "--authentication=token"
+            - "--authorization=basic"
+            - "--ignore=.*"
+            - "--addr=http://127.0.0.1:8181"
+            - "/bootstrap"
+          volumeMounts:
+            - name: certs
+              readOnly: true
+              mountPath: /certs
+            - name: bootstrap
+              readOnly: true
+              mountPath: /bootstrap
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 443
+              scheme: HTTPS
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 443
+              scheme: HTTPS
+            initialDelaySeconds: 3
+            periodSeconds: 5
+        - name: mgmt
+          image: openpolicyagent/kube-mgmt:0.9
+          imagePullPolicy: IfNotPresent
+          resources:
+            {}
+          args:
+            - --opa-auth-token-file=/bootstrap/mgmt-token
+            - --opa-url=http://127.0.0.1:8181/v1
+            - --replicate-path=kubernetes
+            - --enable-policies=false
+          volumeMounts:
+            - name: bootstrap
+              readOnly: true
+              mountPath: /bootstrap
+      serviceAccountName: opa
+      volumes:
+        - name: certs
+          secret:
+            secretName: opa-cert
+        - name: bootstrap
+          emptyDir: {}
+      nodeSelector:
+        {}
+      tolerations:
+        []
+---
+# Source: opa/templates/webhookconfiguration.yaml
+kind: ValidatingWebhookConfiguration
+apiVersion: admissionregistration.k8s.io/v1beta1
+metadata:
+  name: opa
+  annotations:
+  labels:
+    app: opa
+    chart: "opa-1.12.0"
+    release: "opa"
+    heritage: "Helm"
+webhooks:
+  - name: webhook.openpolicyagent.org
+    namespaceSelector:
+      matchExpressions:
+      - key: openpolicyagent.org/webhook
+        operator: NotIn
+        values:
+        - ignore
+
+    failurePolicy: Ignore
+    rules:
+      - apiGroups:
+        - '*'
+        apiVersions:
+        - '*'
+        operations:
+        - '*'
+        resources:
+        - '*'
+    clientConfig:
+
+
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURBakNDQWVxZ0F3SUJBZ0lRQ3JMTHBiL1pJRlVZS1dxN0F1bHRIakFOQmdrcWhraUc5dzBCQVFzRkFEQWIKTVJrd0Z3WURWUVFERXhCdmNHRXRZV1J0YVhOemFXOXVMV05oTUI0WERURTVNVEV4T1RJeE5UVTFNbG9YRFRJNQpNVEV4TmpJeE5UVTFNbG93R3pFWk1CY0dBMVVFQXhNUWIzQmhMV0ZrYldsemMybHZiaTFqWVRDQ0FTSXdEUVlKCktvWklodmNOQVFFQkJRQURnZ0VQQURDQ0FRb0NnZ0VCQVBOYUdJcHMvb3cyQjFKajU2T2VyeUNaSjNPSExELzIKeG9pMXdkUWJiUmNXdkNwMkV0bkVRclZUMm91WFZva1pBYkxNaTJVQXRJcHVuSDdPT0RaSTRPa2dzSEVLRi9zUwpkSUFhZnVuOG1zNTdiOUVuSVRyVGx6WXpKN1VxUjg4QVF6Y0lJemN3VHJ5eW1reDhGWnVQZ09BdThPVU5UbDkzClpaQkFzbStjOGFnSXhCSFZlNnRJNk5MV1dicHM1UEluTERjTmxDNE16SmhnVUVsbTdHZmNBQUtXTWMvQzVFdVQKMk1QY1FGR3k3NDBNKyswazZkN2s0OXFBUFNLWTdNQ2RVLzFvSjVORTFkYXdMUlNSUFNaM29tc3pvUm1tT0R6SwpMa2FCeFFWbmZsZU95TUN0dkx1UEY4YnNHTUh3SmVKWEpVZXdKMEowWEkrblpDQmcxREl3R0k4Q0F3RUFBYU5DCk1FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0QKQWpBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFEbHY4L0pRM29CbWlWWAoxSlNLc3dVWndyd3BHR3FOWUthaHRXQXhHNFdCc1dFSUh0ZG4zWFI5N0kya2Y4MnhVZWtTMjNQOFVzcXpSZStaCnBRUU9vUUhLd2tQZFRnRHp5MDljZzA3K1FqRCt4M0ZMeWI5RzdHM0dEaCtYcDlIUzhHOW5MbWFFWm9aSWNHYUEKMGdjc1p4YzJrNEpoeE1ONVVKVEJqRGdWTjREeWgyWUZmQlJUcFlHMXpqaUhxRmZKeGovSTRkK05WRlQ1Mmo2SQpOTGxHUFFrN0E3OFZCQXdGSGc4djlDVWprcDhOWkEwVEV6WHJDazhYb2RyZGtrVGZIVjJKS1ZGLzJWU2xsbkVQCml4L1pid1M3TXgxeHBWLzhXL0VhcHhPdFg0dGhFRzVFc0tJL0hJQVQvOGRocm5ZL1plTWdNR1NadVZEV3EyaTQKbzRWMTFrK0cKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+
+
+      service:
+        name: opa
+        namespace: opa
+    sideEffects: Unknown
